@@ -41,6 +41,7 @@ public class PickupObject : MonoBehaviour
     private void TimerOnTimerComplete()
     {
         SetHeld();
+        
     }
 
     void Start()
@@ -138,6 +139,7 @@ public class PickupObject : MonoBehaviour
     {
         EffectController.Inst.SetMask(EffectController.EffectState.Normal);
         SetActive();
+        timer.Stop();
     }
 
     public void Pickup()
