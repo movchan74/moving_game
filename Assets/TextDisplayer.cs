@@ -7,34 +7,75 @@ using UnityEngine.UI;
 [Serializable]
 public class ObjectTextData
 {
-    public string StartText = "I need to put some things in a box";
-    public string EndText = "All the things I need are in the box";
-    
-   
+   // public string StartText = "I need to put some things in a box";
+    //public string EndText = "All the things I need are in the box";
+    public List<string> TextList = new List<string>();
+    public List<string> AltTextList = new List<string>();
 }
-
-
 
 public class TextDisplayer : MonoBehaviour
 {
-    public ObjectTextData GameStartEndText;
+    public ObjectTextData StartText;
+    public ObjectTextData EndText;
     
     public List<ObjectTextData> TextList = new List<ObjectTextData>();
 
     public Text TextObject;
 
-    public string curText;
-    public string altText;
+    public ObjectTextData curTextData;
+   
 
     public float AltTextDur = 1;
     private bool showAltText = false;
 
     public static TextDisplayer Inst;
+
+    public int curTextInd = 0;
     
     private void Awake()
     {
         Inst = this;
         LevelStateHandler.NewStateSetEvent += NewStateSetEvent;
+        InputListener.TouchScreen += InputListenerOnTouchScreen;
+    }
+
+    public bool TextIsActive;
+    
+    private void InputListenerOnTouchScreen(Vector3 obj)
+    {
+        
+        if (LevelStateHandler.state == LevelStateHandler.State.Beginning)
+        {
+            curTextInd++;
+            if (curTextInd > curTextData.TextList.Count - 1)
+            {
+                LevelStateHandler.Inst.TextCompleted();
+            }
+
+            return;
+        }
+        
+        if (showAltText)
+        {
+            curTextInd++;
+            if (curTextInd > curTextData.AltTextList.Count - 1)
+                HideAltText();
+        }
+        
+        
+        
+        curTextInd = (curTextInd + 1);
+        
+        if (curTextInd > curTextData.TextList.Count - 1)
+        {
+            TextIsActive = false;
+            curTextInd = curTextData.TextList.Count - 1;
+        }
+        else
+        {
+            TextIsActive = true;
+        }
+            
     }
 
     private void OnDestroy()
@@ -44,12 +85,14 @@ public class TextDisplayer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!showAltText)
-            TextObject.text = curText;
-        else
-        {
-            TextObject.text = altText;
-        }
+        if (TextIsActive)
+        { if (!showAltText)
+                TextObject.text = curTextData.TextList[curTextInd];
+            else
+            {
+                TextObject.text = curTextData.AltTextList[curTextInd];
+            }
+        } 
     }
 
     private void NewStateSetEvent(LevelStateHandler.State obj)
@@ -57,29 +100,41 @@ public class TextDisplayer : MonoBehaviour
         switch (obj)
         {
             case LevelStateHandler.State.Beginning:
-                curText = GameStartEndText.StartText;
+                
+                StartNewTextStream(StartText);
                 break;
             case LevelStateHandler.State.SearchForObject:
-                curText = TextList[LevelStateHandler.CurrentObjInt].StartText;
-                break;
-            case LevelStateHandler.State.CompletedObject:
-                curText =  TextList[LevelStateHandler.CurrentObjInt].EndText;
+                
+                StartNewTextStream(TextList[LevelStateHandler.CurrentObjInt]);
+                
                 break;
             case LevelStateHandler.State.Ending:
-                curText = GameStartEndText.EndText;
+                
+                StartNewTextStream(EndText);
                 break;
         }
     }
 
+    void StartNewTextStream(ObjectTextData textData)
+    {
+        TextIsActive = true;
+        curTextInd = 0;
+        curTextData = textData;
+    }
+    
     public void ShowAltText()
     {
-        CancelInvoke();
+        TextIsActive = true;
+       // CancelInvoke();
         showAltText = true;
-        Invoke("HideAltText", AltTextDur);
+        curTextInd = 0;
+        //Invoke("HideAltText", AltTextDur);
     }
 
     public void HideAltText()
     {
+        TextIsActive = true;
+        curTextInd = 0;
         showAltText = false;
     }
 }

@@ -18,12 +18,11 @@ public class LevelStateHandler : MonoBehaviour
 
     public static State state;
 
+    public State state1;
+    
     public static LevelStateHandler Inst;
     
     public static int CurrentObjInt = 0;
-
-    public float BeginningWait = 3;
-    public float CompleteWait = 2;
 
 
     public int MaxObjects = 4;
@@ -56,24 +55,19 @@ public class LevelStateHandler : MonoBehaviour
         CurrentObjInt = 0;
         state = State.Beginning;
         NewStateSetEvent(state);
-        timer.Reset(BeginningWait);
     }
 
     void SetSearchForObject()
     {
-        
         state = State.SearchForObject;
         NewStateSetEvent(state);
     }
 
     void SetCompletedObject()
     {
+       
         
-        state = State.CompletedObject;
-        NewStateSetEvent(state);
-        timer.Reset(CompleteWait);
         
-        CurrentObjInt++;
     }
 
     void SetEnding()
@@ -87,7 +81,10 @@ public class LevelStateHandler : MonoBehaviour
         if (CurrentObjInt < MaxObjects - 1)
         {
             if (state == State.SearchForObject)
-                SetCompletedObject();
+            {
+                CurrentObjInt++;
+                SetSearchForObject();
+            }
         }
         else
         {
@@ -95,9 +92,14 @@ public class LevelStateHandler : MonoBehaviour
         }
        
     }
-    
-    
-    
-    
-      
+
+    public void TextCompleted()
+    {
+        SetSearchForObject();
+    }
+
+    private void Update()
+    {
+        state1 = state;
+    }
 }

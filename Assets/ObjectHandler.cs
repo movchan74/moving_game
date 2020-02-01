@@ -53,6 +53,9 @@ public class ObjectHandler : MonoBehaviour
     {
         if (LevelStateHandler.state != LevelStateHandler.State.SearchForObject)
             return;
+
+        if (TextDisplayer.Inst.TextIsActive)
+            return;
         
         
        
