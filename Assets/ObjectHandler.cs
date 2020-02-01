@@ -97,13 +97,16 @@ public class ObjectHandler : MonoBehaviour
         if (state == State.Free)
             LookForObject();
         
-        // if (heldObject )
-
-        if (IsLookingAtPickableObject()) {
-            Pointer.color = ActivePointerColor;
+        if (state == State.Free) {
+            if (IsLookingAtPickableObject()) {
+                Pointer.color = ActivePointerColor;
+            }
+            else {
+                Pointer.color = IdlePointerColor;
+            }
         }
         else {
-            Pointer.color = IdlePointerColor;
+            Pointer.color = Color.clear;
         }
     }
 

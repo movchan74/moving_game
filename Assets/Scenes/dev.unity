@@ -1232,6 +1232,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5006512735850305679}
     m_Modifications:
+    - target: {fileID: 2068381982673612798, guid: 88beab9e0f3aeb011845c1a36d462c59,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e0bddd770f29e5ad5a988bd59c24ed41, type: 2}
     - target: {fileID: 2068381982675512606, guid: 88beab9e0f3aeb011845c1a36d462c59,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2251,7 +2256,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: e30fd961f96f8abc1b03d2230caf3a96, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2994,6 +2999,9 @@ MonoBehaviour:
   RayLayer:
     serializedVersion: 2
     m_Bits: 512
+  Pointer: {fileID: 1195198339}
+  IdlePointerColor: {r: 1, g: 1, b: 1, a: 1}
+  ActivePointerColor: {r: 1, g: 0, b: 0, a: 1}
   ObjectHoldTransform: {fileID: 1589559108}
   AnObjectCanBePickedUp: 0
   detectedObject: {fileID: 0}
