@@ -1,0 +1,172 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a255966f0120e41b5ba3e1e65ae415c6, type: 3}
+  m_Name: General_GameData
+  m_EditorClassIdentifier: 
+  TouchThreshold: 10
+  PlugThreshold: 4
+  SectionMat: {fileID: 2100000, guid: d7592ed1e92f948c9b087b114eb5e41f, type: 2}
+  DisconnectMargin: 1
+  DisconnectPush: 100
+  MaxHeldVel: 10
+  EdgeMoveMargin: 0.05
+  FlickerOffRange:
+    min: 0.1
+    max: 0.25
+  FlickerOnRange:
+    min: 0.5
+    max: 1
+  LevelPrefab:
+  - {fileID: 5867438592766554541, guid: 1ecf0140b2f5743679e35d55c76ccd57, type: 3}
+  - {fileID: 3618358063830472426, guid: f72099584b2b04234ad29f8dbdf707b4, type: 3}
+  - {fileID: 6362661478505005133, guid: db75832d18b8641929eff638266c6502, type: 3}
+  - {fileID: 5422452399757647236, guid: 6928392597e0f474d849b0fdf1698b9a, type: 3}
+  - {fileID: 4917462105758822779, guid: bdbc856ec2abe4d068a963f5a2966839, type: 3}
+  - {fileID: 6036366959938082130, guid: 21f2f36ca23f9454d8b26170d026f072, type: 3}
+  ColorDataList:
+  - name: 1
+    CablePosPrefab: {fileID: 6455895575291606309, guid: 194b5f2e9a62e4dc0ba26f34ffce1683,
+      type: 3}
+    CableNegPrefab: {fileID: 530388891111223126, guid: 2c1ac7b0816ee4008928565b3c1c4c6f,
+      type: 3}
+    CableSkinPrefab: {fileID: 5313376679817716356, guid: e0bda5e2af822fd409d7e0b5c3eb236d,
+      type: 3}
+  - name: 2
+    CablePosPrefab: {fileID: 8362958287066839443, guid: 4cdded0e6542644ac9f1bed22f071f1f,
+      type: 3}
+    CableNegPrefab: {fileID: 2774313417556603075, guid: d1305c1f22fa147d68d371f064f77398,
+      type: 3}
+    CableSkinPrefab: {fileID: 5535261765053486161, guid: 32a6dd2b34210b6459f8a513ed501c89,
+      type: 3}
+  - name: 3
+    CablePosPrefab: {fileID: 6165438014229020088, guid: bce52f78a09854c23acbe2cee884cef1,
+      type: 3}
+    CableNegPrefab: {fileID: 1087995585542259533, guid: bd47e545d20ad449cb5e7fb3eb6a91e7,
+      type: 3}
+    CableSkinPrefab: {fileID: 811929553753563303, guid: 5d1018da03a65524a91deceb4b6628a2,
+      type: 3}
+  - name: 4
+    CablePosPrefab: {fileID: 2240213948867541981, guid: 5a4e80b3eb7f34688bddfbc0dbfeeb7c,
+      type: 3}
+    CableNegPrefab: {fileID: 8159313109967478997, guid: 79191eb6d0c0849818cbe99859664884,
+      type: 3}
+    CableSkinPrefab: {fileID: 8423169896262958610, guid: 4b7bf1c8e0f2ec24db5dfa579f58b962,
+      type: 3}
+  - name: 0
+    CablePosPrefab: {fileID: 6165438014229020088, guid: fe705185dae00480f9e079c76139ec19,
+      type: 3}
+    CableNegPrefab: {fileID: 3261217672324371018, guid: 1d081bed396884a63b3d6cf795680a38,
+      type: 3}
+    CableSkinPrefab: {fileID: 5272385136605774350, guid: afd39af5404d41d4ea53cabde6d04372,
+      type: 3}
+  - name: 5
+    CablePosPrefab: {fileID: 7345612722205648632, guid: dcc445a62fade4fc999b40073014d449,
+      type: 3}
+    CableNegPrefab: {fileID: 5216719882387762175, guid: 90d90cf98316440a69f248b4e1b1ba15,
+      type: 3}
+    CableSkinPrefab: {fileID: 1209321231880466884, guid: ed8fef2f0763ff944b1194a3d192ba58,
+      type: 3}
+  - name: 6
+    CablePosPrefab: {fileID: 6663867063444180296, guid: a345a9387a3a049dd972531693136597,
+      type: 3}
+    CableNegPrefab: {fileID: 3893364948022501991, guid: 89fd615bd59494c7c84ca7c7596829c7,
+      type: 3}
+    CableSkinPrefab: {fileID: 2481583300799336890, guid: 5bc0075dad589f747ab71dad81648e16,
+      type: 3}
+  - name: 7
+    CablePosPrefab: {fileID: 1058710513544581009, guid: 38b29b5e8ab4f462fb07c7d417a88a8e,
+      type: 3}
+    CableNegPrefab: {fileID: 6626376447280358436, guid: bc26b717068354ab49ad5d3fd2212d9e,
+      type: 3}
+    CableSkinPrefab: {fileID: 6856630177628279754, guid: 535cfa34d9c89bd4e92395ae908596ea,
+      type: 3}
+  CableHubPrefab: {fileID: 3408044674760429492, guid: 0a51a138f064c486f929d2ed5049d756,
+    type: 3}
+  CableSnakePrefab: {fileID: 3173786894956919142, guid: bfb6c195ce9754e068e9a3a327253902,
+    type: 3}
+  CablePosEdgePrefab: {fileID: 4813934958216930590, guid: 7fe980a5967d646129d45d7ec9861eef,
+    type: 3}
+  CableNegEdgePrefab: {fileID: 4877075087303142353, guid: 4900237f4315a4b66a59805f3e61225a,
+    type: 3}
+  CableSectionPrefab: {fileID: 8442605561087935832, guid: 58728d97e0a5e4ce5a1a8db8bb9efa9c,
+    type: 3}
+  CableSkinPrefab: {fileID: 6856630177628279754, guid: 535cfa34d9c89bd4e92395ae908596ea,
+    type: 3}
+  OnTime: 0.3
+  OffTime: 0.05
+  OnCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.3637077
+      value: 0.3272733
+      inSlope: -4.6976576
+      outSlope: -4.6976576
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.31650057
+      outWeight: 0.057878736
+    - serializedVersion: 3
+      time: 0.68871534
+      value: 0.7154191
+      inSlope: -4.084267
+      outSlope: -4.084267
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.056161262
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  OffCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  OnCurveList: []
