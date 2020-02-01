@@ -29,6 +29,23 @@
             <e p="TTPlayerPrefs.cs" t="Include" />
           </e>
         </e>
+        <e p="EffectController.cs" t="Include" />
+        <e p="Fonts" t="Include">
+          <e p="linux_libertine" t="Include">
+            <e p="Bugs.txt" t="Include" />
+            <e p="ChangeLog.txt" t="Include" />
+            <e p="GPL.txt" t="Include" />
+            <e p="INSTALL.txt" t="Include" />
+            <e p="LICENCE.txt" t="Include" />
+            <e p="OFL.txt" t="Include" />
+            <e p="Readme.txt" t="Include" />
+          </e>
+        </e>
+        <e p="Johannes" t="Include">
+          <e p="CameraMirror" t="Include">
+            <e p="Shd_Mirror.shader" t="Include" />
+          </e>
+        </e>
         <e p="LevelStateHandler.cs" t="Include" />
         <e p="ObjectHandler.cs" t="Include" />
         <e p="PickupObject.cs" t="Include" />

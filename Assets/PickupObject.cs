@@ -17,6 +17,8 @@ public class PickupObject : MonoBehaviour
         
     }
 
+    public EffectController.EffectState EffectState = EffectController.EffectState.Normal;
+
     public State state;
 
     public float MoveDur = 1f;
@@ -100,9 +102,13 @@ public class PickupObject : MonoBehaviour
 
     void SetHeld()
     {
+        
         state = State.Held;
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
+        EffectController.Inst.SetMask(EffectState);
+        
+        
     }
 
     void SetCompleted()
@@ -127,11 +133,13 @@ public class PickupObject : MonoBehaviour
     }                            
     public void Release()
     {
+        EffectController.Inst.SetMask(EffectController.EffectState.Normal);
         SetActive();
     }
 
     public void Pickup()
     {
+        
         SetMoving();
     }
 
