@@ -17,6 +17,9 @@ public class PickupObject : MonoBehaviour
         
     }
 
+    public Vector3 HoldOffset;
+    public Vector3 HoldRotationOffset;
+
     public EffectController.EffectState EffectState = EffectController.EffectState.Normal;
 
     public State state;
@@ -121,15 +124,15 @@ public class PickupObject : MonoBehaviour
     {
         var r = MoveCurve.Evaluate(timer.Ratio());
         transform.localPosition =
-            Vector3.Lerp(startMovePos, Vector3.zero,r);
+            Vector3.Lerp(startMovePos, HoldOffset,r);
 
-        transform.localRotation = Quaternion.Lerp(startRot, Quaternion.identity, r );
+        transform.localRotation = Quaternion.Lerp(startRot, Quaternion.Euler(HoldRotationOffset), r );
     }
 
     private void UpdateHeld()    
     {                            
-              
-        
+        transform.localPosition = HoldOffset;
+        transform.localRotation = Quaternion.Euler(HoldRotationOffset);
     }                            
     public void Release()
     {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectHandler : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class ObjectHandler : MonoBehaviour
     public State state;
     
     public LayerMask RayLayer;
+
+    public Image Pointer;
+    public Color IdlePointerColor;
+    public Color ActivePointerColor;
 
     public static ObjectHandler Inst;
     public Transform ObjectHoldTransform;
@@ -83,10 +88,23 @@ public class ObjectHandler : MonoBehaviour
         
     }
 
+    private bool IsLookingAtPickableObject() {
+        return (AnObjectCanBePickedUp && detectedObject == desiredObject);
+    }
+
     private void FixedUpdate()
     {
         if (state == State.Free)
-        LookForObject();
+            LookForObject();
+        
+        // if (heldObject )
+
+        if (IsLookingAtPickableObject()) {
+            Pointer.color = ActivePointerColor;
+        }
+        else {
+            Pointer.color = IdlePointerColor;
+        }
     }
 
     void LookForObject()
