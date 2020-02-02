@@ -16,7 +16,8 @@ MonoBehaviour:
     TextList:
     - I still have a few small things at your place.
     - Please, put them in the box in the living room.
-    AltTextList: []
+    AltTextList:
+    - ''''''
   EndText:
     TextList:
     - "It\u2019s true"
