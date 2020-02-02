@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameStateManager 
     : MonoBehaviour
 {
+    public Transform Menu;
     public GameObject PlayButton;
     public GameObject NextLevelButton;
     public static GameStateManager Inst;
@@ -51,11 +52,18 @@ public class GameStateManager
 
     public void EndGame()
     {
-        PlayButton.SetActive(true);
-        Time.timeScale = 0;
-        state = State.Pause;
+        Debug.Log("Exit");
+        Application.Quit();
+        // PlayButton.SetActive(true);
+        // Time.timeScale = 0;
+        // state = State.Pause;
     }
     
+    public void RestartGame(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Invoke("Reset", 0.01f);
+    }
+
     public void EndLevel()
     {
         NextLevelButton.SetActive(true);
@@ -95,7 +103,21 @@ public class GameStateManager
         PrevButtonClicked();
         PlayButtonPressed();
     }
-    
+
+     void Update () {
+ 
+         if (Input.GetKeyDown (KeyCode.Escape)) {
+             
+             if (Menu.gameObject.activeInHierarchy == false) {        
+                 Menu.gameObject.SetActive (true);
+                 Time.timeScale = 0;
+             } else 
+             {
+                 Menu.gameObject.SetActive (false);
+                 Time.timeScale = 1;
+             }
+         } 
+     }
 
     
 }
