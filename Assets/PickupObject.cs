@@ -53,7 +53,7 @@ public class PickupObject : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Box"))
         {
-            
+            if (state == State.Active)
                 HitBox();
         }
     }
