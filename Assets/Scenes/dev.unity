@@ -10096,7 +10096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1beadaf9d234e4b36bddd7e77be5964c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Menu: {fileID: 0}
+  Menu: {fileID: 1687345511}
   PlayButton: {fileID: 7030763222840804836}
   NextLevelButton: {fileID: 2169058162511985635}
   ReloadSceneOnReset: 1
