@@ -108,8 +108,8 @@ public class PickupObject : MonoBehaviour
     {
         
         state = State.Held;
-        transform.localPosition = HoldOffset;
-        transform.localRotation = Quaternion.Euler(HoldRotationOffset);
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
         EffectController.Inst.SetMask(EffectState);
         
         
@@ -139,8 +139,6 @@ public class PickupObject : MonoBehaviour
     {
         EffectController.Inst.SetMask(EffectController.EffectState.Normal);
         SetActive();
-        rb.AddForce(ObjectHandler.Inst.ObjectHoldTransform.forward * 
-                    DataHolder.Params.ReleaseVel, ForceMode.VelocityChange);
         timer.Stop();
     }
 

@@ -25,7 +25,7 @@ public class LevelStateHandler : MonoBehaviour
     public static int CurrentObjInt = 0;
 
 
-   int MaxObjects = 3;
+    public int MaxObjects = 4;
     public Timer timer;
 
     private void Awake()

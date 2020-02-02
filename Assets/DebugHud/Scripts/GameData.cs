@@ -8,9 +8,6 @@ using UnityEngine.Serialization;
 
 public class GameData : ScriptableObject
 {
-    public ObjectTextData StartText;
-    public ObjectTextData EndText;
     
-    public List<ObjectTextData> TextList = new List<ObjectTextData>();
-    public float ReleaseVel = 2;
+    
 }
