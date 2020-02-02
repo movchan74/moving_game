@@ -21,6 +21,7 @@ public class EffectController : MonoBehaviour
    public LayerMask MirrorMask;
    public LayerMask BottleMask;
    public LayerMask PhotoMask;
+   public LayerMask Nothing;
 
    private void Awake()
    {
@@ -66,5 +67,10 @@ public class EffectController : MonoBehaviour
    public void SetPhoto()
    {
        GM.Inst.cam.cullingMask = PhotoMask;
+   }
+
+   public void SetBlack()
+   {
+       GM.Inst.cam.cullingMask = Nothing;
    }
 }
