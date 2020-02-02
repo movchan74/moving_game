@@ -91,10 +91,10 @@ public class GM : MonoBehaviour
         GameStateManager.Inst.EndLevel();
     }
 
+   
 
-    public void EndGame()
-    {
-        EffectController.Inst.SetBlack();
-        GameStateManager.Inst.EndGame();
-    }
+    
+    
+    
+    
 }

@@ -15,10 +15,10 @@ public class ObjectTextData
 
 public class TextDisplayer : MonoBehaviour
 {
-//    public ObjectTextData StartText;
-//    public ObjectTextData EndText;
-//    
-//    public List<ObjectTextData> TextList = new List<ObjectTextData>();
+    public ObjectTextData StartText;
+    public ObjectTextData EndText;
+    
+    public List<ObjectTextData> TextList = new List<ObjectTextData>();
 
     public Text TextObject;
 
@@ -68,12 +68,6 @@ public class TextDisplayer : MonoBehaviour
         
         if (curTextInd > curTextData.TextList.Count - 1)
         {
-            if (LevelStateHandler.state == LevelStateHandler.State.Ending)
-            {
-                GM.Inst.EndGame();
-                return;
-            }
-            
             TextIsActive = false;
             curTextInd = curTextData.TextList.Count - 1;
         }
@@ -98,10 +92,7 @@ public class TextDisplayer : MonoBehaviour
             {
                 TextObject.text = curTextData.AltTextList[curTextInd];
             }
-        }
-
-        if (ObjectHandler.Inst.state == ObjectHandler.State.Holding)
-            TextObject.text = "";
+        } 
     }
 
     private void NewStateSetEvent(LevelStateHandler.State obj)
@@ -110,16 +101,16 @@ public class TextDisplayer : MonoBehaviour
         {
             case LevelStateHandler.State.Beginning:
                 
-                StartNewTextStream(DataHolder.Params.StartText);
+                StartNewTextStream(StartText);
                 break;
             case LevelStateHandler.State.SearchForObject:
                 
-                StartNewTextStream(DataHolder.Params.TextList[LevelStateHandler.CurrentObjInt]);
+                StartNewTextStream(TextList[LevelStateHandler.CurrentObjInt]);
                 
                 break;
             case LevelStateHandler.State.Ending:
                 
-                StartNewTextStream(DataHolder.Params.EndText);
+                StartNewTextStream(EndText);
                 break;
         }
     }
