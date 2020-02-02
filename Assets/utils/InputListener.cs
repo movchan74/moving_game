@@ -37,15 +37,17 @@ public class InputListener : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		if (Input.GetMouseButtonDown(0))
+			TouchScreen (Input.mousePosition);
 		
-
-		#if UNITY_EDITOR
-		UpdateMouseInput ();
-
-		#else
-		UpdateTouchInput();
-
-		#endif
+//
+//		#if UNITY_EDITOR
+//		UpdateMouseInput ();
+//
+//		#else
+//		UpdateTouchInput();
+//
+//		#endif
 	}
 
 	void UpdateMouseInput ()
@@ -74,11 +76,6 @@ public class InputListener : MonoBehaviour
 
 			TouchScreen (Input.mousePosition);
 			mouseDown = true;
-
-
-
-
-
 		} else if (Input.GetMouseButtonUp (0))
 		{
 			InputWorldPositionChange = InputWorldPosition - InputWorldPositionStart;
